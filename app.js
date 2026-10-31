@@ -85,6 +85,76 @@ const projects = [
     ]
   },
   {
+    id: 'pbi-dw',
+    category: 'data',
+    categoryLabel: 'Power BI & Data Warehouse',
+    year: '2024',
+    title: 'Implementasi Data Warehouse & Visualisasi Power BI',
+    subtitle: 'Arsitektur Pipeline ETL, Pemodelan Snowflake Schema, & Dasbor Analitik Publikasi Ilmiah UMN',
+    summary: 'Membangun arsitektur Data Warehouse berbasis Snowflake Schema sebagai Single Source of Truth (SSOT) untuk mengintegrasikan data publikasi dosen lintas fakultas di Universitas Multimedia Nusantara, dilengkapi dasbor interaktif Power BI untuk analisis tren dan kuartil Scopus.',
+    tags: ['Power BI', 'Data Warehouse', 'Snowflake Schema', 'ETL Pipeline', 'DAX', 'Visualisasi Data'],
+    problem: 'Data publikasi ilmiah dan profil dosen tersebar dalam format terpisah-pisah, memiliki inkonsistensi penamaan, serta sulit dipantau secara terpusat untuk kebutuhan akreditasi kampus dan evaluasi hibah riset.',
+    steps: [
+      '<strong>Desain Pipeline ETL 4-Tahap:</strong> Merancang alur Extract, Transform, Cleansing & Standardization, serta Conformed Dimensions guna menangani format duplikat dan data kosong.',
+      '<strong>Pemodelan Skema Snowflake:</strong> Membangun tabel fakta (<em>FactPublication</em> & <em>FactPublicationAuthor</em>) yang terhubung relasional dengan tabel dimensi (<em>DimYear, DimStudyProgram, DimCiteScoreRank, DimVenue, DimFaculty</em>) untuk menangani relasi many-to-many publikasi dosen.',
+      '<strong>Standardisasi Kuartil Scopus (Q1–Q4):</strong> Memetakan nilai CiteScore Percentile ke dalam kuartil resmi jurnal ilmiah guna standardisasi mutu akademik.',
+      '<strong>Pengembangan Dasbor Interaktif Power BI:</strong> Merancang visualisasi tren volume publikasi, sebaran kuartil per fakultas, serta analisis kolaborasi riset interdisipliner.'
+    ],
+    impact: 'Menyediakan Single Source of Truth yang mempercepat verifikasi metrik riset kampus, mendukung pelaporan akreditasi program studi, serta menjadi dasar penetapan alokasi pendanaan penelitian dosen.',
+    visuals: [
+      {
+        src: 'assets/projects/powerbi_pub_trend.png',
+        title: 'Tren Volume Publikasi Ilmiah per Tahun & Kontribusi Program Studi',
+        desc: 'Visualisasi interaktif Power BI yang memperlihatkan tren volume publikasi tahun 2021 hingga 2025 serta perbandingan produktivitas riset antar program studi di lingkungan UMN sebagai dasar evaluasi pendanaan riset.'
+      },
+      {
+        src: 'assets/projects/powerbi_quartile_dist.png',
+        title: 'Distribusi Kuartil Jurnal Scopus (Q1–Q4) per Fakultas',
+        desc: 'Visualisasi sebaran publication share lintas fakultas (FB, FIKOM, FSD, FTI) berdasarkan kuartil jurnal CiteScore/Scopus, memetakan dominasi kuartil publikasi dan memandu strategi peningkatan ke Q2 dan Q1.'
+      },
+      {
+        src: 'assets/projects/powerbi_collab_type.png',
+        title: 'Komposisi & Rata-rata Kolaborasi per Jenis Publikasi Ilmiah',
+        desc: 'Visualisasi diagram lingkaran (pie chart) yang mengukur rata-rata keterlibatan kolaborasi multi-dosen pada setiap jenis karya ilmiah, menunjukkan dominasi kolaborasi pada Article Journal (36.8%) dan Conference Paper (18.4%).'
+      }
+    ]
+  },
+  {
+    id: 'tableau-datvis',
+    category: 'data',
+    categoryLabel: 'Tableau & Visual Analytics',
+    year: '2024',
+    title: 'Analisis Polusi Air & Dampak Kesehatan Publik Global (SDG 6)',
+    subtitle: 'Studi Kasus Lingkungan Hidup, Akses Sanitasi, & Pemodelan Peramalan (Forecasting) Berbasis Tableau',
+    summary: 'Merancang sistem visualisasi data dan dasbor analitik komprehensif menggunakan Tableau untuk menganalisis keterkaitan antara indeks kualitas air, cakupan sanitasi, dan beban penyakit diare di berbagai belahan dunia, dilengkapi forecasting tren prediktif hingga 2030.',
+    tags: ['Tableau', 'Visualisasi Data', 'SDG 6', 'Interactive Dashboard', 'Geospatial Map', 'Forecasting'],
+    problem: 'Krisis sanitasi dan polusi air berdampak langsung pada beban penyakit fatal (seperti diare dan mortalitas bayi), namun kompleksitas data multivariat global sulit dipahami oleh pemangku kebijakan jika hanya disajikan dalam bentuk tabel angka mentah.',
+    steps: [
+      '<strong>Pembersihan & Penyiapan Data Multivariat:</strong> Mengintegrasikan data indikator kualitas air (Kaggle/WHO), akses fasilitas kesehatan, dan angka morbiditas lintas negara ke dalam struktur terstandardisasi.',
+      '<strong>Pemetaan Geospasial Interaktif (Mapbox):</strong> Membangun visualisasi peta tematik global untuk memetakan distribusi tingkat pencemaran air dan disparitas cakupan sanitasi di negara berkembang.',
+      '<strong>Analisis Korelasi & Regresi:</strong> Mengidentifikasi hubungan linier antara paparan polusi air dengan lonjakan kasus diare melalui scatter plot dan garis tren regional.',
+      '<strong>Peramalan Deret Waktu (Time-Series Forecasting):</strong> Mengimplementasikan pemodelan forecasting pada Tableau untuk memproyeksikan tren tekanan penyakit hingga tahun 2030 berdasarkan skenario perbaikan sanitasi.'
+    ],
+    impact: 'Menghasilkan dasbor analitik komprehensif yang mempermudah pembuat kebijakan mengidentifikasi wilayah defisit sanitasi tinggi dan menyusun intervensi kesehatan berbasis bukti (evidence-based policy).',
+    visuals: [
+      {
+        src: 'assets/projects/tableau_water_risk.png',
+        title: 'Dasbor Analisis Risiko Pencemaran Air & Beban Penyakit Global',
+        desc: 'Tampilan antarmuka Tableau interaktif mencakup peta tematik Mapbox persebaran polusi air dunia, tren deret waktu peramalan (forecasting) risiko diare hingga 2030, scatter plot regresi polusi vs kasus penyakit, dan bobot risiko sanitasi.'
+      },
+      {
+        src: 'assets/projects/tableau_health_access.png',
+        title: 'Dasbor Aksesibilitas Fasilitas Kesehatan & Angka Kematian Bayi',
+        desc: 'Visualisasi pemetaan tingkat akses layanan kesehatan global, Healthcare Deficit Index antar-kawasan regional, grafik deret waktu peramalan akses medis, serta korelasi bubble scatter plot antara fasilitas kesehatan dan Infant Mortality Rate.'
+      },
+      {
+        src: 'assets/projects/tableau_sanitation_risk.png',
+        title: 'Dasbor Analisis Cakupan Sanitasi Lingkungan & Mitigasi Diare Global',
+        desc: 'Visualisasi geospasial cakupan sanitasi dunia, diagram korelasi kuat antara peningkatan fasilitas sanitasi terhadap penurunan drastis kasus diare, kontribusi risiko per negara, dan indeks defisit sanitasi regional.'
+      }
+    ]
+  },
+  {
     id: 'data-ml',
     category: 'data',
     categoryLabel: 'Data & Machine Learning',
@@ -92,7 +162,7 @@ const projects = [
     title: 'Pemodelan Data Prediktif & Analisis Risiko',
     subtitle: 'Analisis Statistik, Pembobotan Teks, & Prediksi Tingkat Risiko Berbasis Data',
     summary: 'Mengolah data survei multi-parameter untuk memetakan tingkat risiko sanitasi dan akses air bersih, lalu melatih model Machine Learning agar mampu memprediksi potensi risiko secara akurat.',
-    tags: ['VS Code', 'Power BI', 'Machine Learning', 'Data Preprocessing', 'Random Forest'],
+    tags: ['VS Code', 'Machine Learning', 'Data Preprocessing', 'Random Forest'],
     problem: 'Banyak pengambil keputusan kesulitan menentukan daerah prioritas bantuan karena data yang tersedia sangat banyak, tersebar, dan bercampur antara angka statistik dan catatan teks narasi.',
     steps: [
       '<strong>Pembersihan & Standardisasi Data:</strong> Menangani data yang kosong, menyeragamkan format nilai, dan mengeliminasi data duplikat agar hasil analisis tidak bias.',
@@ -164,7 +234,7 @@ const projects = [
     title: 'Analisis Industri Perfilman & Segmentasi K-Means',
     subtitle: 'Eksplorasi Keuangan Box Office, Faktor Popularitas, & Pengelompokan Film',
     summary: 'Menganalisis data finansial ribuan film global untuk menemukan pola keterkaitan antara biaya produksi, apresiasi ulasan penonton, serta pengelompokan jenis film berdasarkan profitabilitas.',
-    tags: ['Tableau', 'VS Code', 'K-Means Clustering', 'EDA', 'Visualisasi Data'],
+    tags: ['VS Code', 'K-Means Clustering', 'EDA', 'Visualisasi Data'],
     problem: 'Memproduksi film membutuhkan investasi biaya yang sangat besar dengan risiko kegagalan komersial yang tinggi. Analisis ini membantu produser memahami formula konten yang diminati pasar.',
     steps: [
       '<strong>Pembersihan Data Industri:</strong> Menyelaraskan catatan angka keuangan dalam mata uang global dan menangani data pendapatan bioskop yang tidak lengkap.',
