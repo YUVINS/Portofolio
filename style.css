@@ -1,0 +1,79 @@
+/* Custom Styles for Kelvin Alexander's Portfolio */
+
+/* Custom Smooth Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0F19;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Skill Tags */
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  background-color: #1E293B;
+  color: #CBD5E1;
+  border: 1px solid rgba(51, 65, 85, 0.7);
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  background-color: #334155;
+  color: #F8FAFC;
+  border-color: #F59E0B;
+  transform: translateY(-1px);
+}
+
+/* Filter Button Active State */
+.filter-btn.active {
+  background: linear-gradient(135deg, #D97706 0%, #F59E0B 100%);
+  color: #000000;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+}
+
+/* Glass Card Hover Effect */
+.glass-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6), 0 0 15px -3px rgba(245, 158, 11, 0.1);
+}
+
+/* Subtle Tilt Animation for Avatar */
+@keyframes tilt {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+}
+
+.animate-tilt {
+  animation: tilt 6s infinite ease-in-out;
+}
+
+/* High Z-Index for Lightbox */
+.z-60 {
+  z-index: 60;
+}
