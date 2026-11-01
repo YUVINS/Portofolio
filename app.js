@@ -328,9 +328,6 @@ function renderProjects(filter = 'all') {
             ${p.categoryLabel}
           </span>
         </div>
-        <div class="absolute top-3 right-3 text-xs text-slate-300 font-mono bg-surface-900/90 px-2.5 py-0.5 rounded-md backdrop-blur-sm border border-slate-700/60 shadow">
-          ${p.year}
-        </div>
         <div class="absolute bottom-2 right-2 px-2.5 py-1 rounded-lg bg-black/80 text-[11px] text-brand-light flex items-center gap-1.5 backdrop-blur-sm border border-white/10 shadow">
           <i data-lucide="image" class="w-3.5 h-3.5 text-brand-gold"></i>
           <span>${p.visuals.length} Visual Nyata</span>
@@ -405,7 +402,7 @@ window.openModal = function(id) {
   currentVisualIndex = 0;
 
   modalCategory.textContent = p.categoryLabel;
-  modalYear.textContent = p.year;
+  modalYear.textContent = "";
   modalTitle.textContent = p.title;
   modalSubtitle.textContent = p.subtitle;
   modalProblem.textContent = p.problem;
