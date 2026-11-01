@@ -18,34 +18,34 @@ const projects = [
       'Sales & Distribution (SD)',
       'Materials Management (MM)',
       'Order-to-Cash (O2C)',
-      'Sales Order (VA01)',
+      'Sales Order',
       'Integrasi Logistik & Keuangan (SD-FI)'
     ],
     problem: 'Dalam proses penjualan perusahaan berskala enterprise, sering terjadi risiko kesalahan input harga secara manual, keterlambatan verifikasi kuantitas stok di gudang, serta tidak sinkronnya pencatatan penjualan barang dengan jurnal pendapatan di departemen akuntansi keuangan. Proyek ini menyelesaikan masalah tersebut dengan membangun alur Order-to-Cash (O2C) terintegrasi pada sistem SAP S/4 HANA, sehingga penerbitan Sales Order langsung mereferensikan Quotation resmi, harga terhitung otomatis sesuai skema *Pricing Condition*, dan akun pendapatan tercatat otomatis tanpa intervensi manual.',
     steps: [
-      '<strong>Penyusunan Struktur Organisasi Penjualan (SD) & Pengadaan (MM):</strong> Mengonfigurasi Sales Organization (US28), Distribution Channels (Wholesale / Internet), Divisions (Accessories & Bicycles), Sales Area, serta menetapkan Shipping Points (DL28, MI28, SD28) dan Purchasing Organization di SPRO.',
-      '<strong>Pengaturan Master Data Pelanggan & Material Penjualan:</strong> Mendaftarkan Business Partner resmi pelanggan (Company 28 DC Bikes #1003053) lengkap dengan data Sales Area, serta memperluas data material (Elbow Pads, Road Helmet, Repair Kit, Off Road Helmet) dengan data tampilan Sales (Sales Views).',
-      '<strong>Penetapan Skema Harga Jual & Integrasi Akuntansi (SD-FI):</strong> Mengatur skema kondisi harga (*Pricing Condition PR00*) via transaksi VK11 untuk Sales Org US28, serta memetakan akun pendapatan otomatis ke modul Finance (*Automatic Account Assignment of Revenue Elements*) dengan menyelesaikan kendala penguncian cost center (substitusi ke cost center aktif NAPL1028).',
-      '<strong>Pembuatan Dokumen Pesanan Penjualan (Sales Order):</strong> Membuat dokumen pesanan resmi pelanggan (*Create Standard Order: Overview*) dengan mereferensikan dokumen penawaran harga (*Sales Quotation #20000008*), memverifikasi 4 item barang senilai total $3,509.00 USD, nomor referensi pelanggan (#1028), syarat pembayaran, serta tanggal pengiriman terjadwal (*Requested Delivery Date: 12/31/2025*).',
-      '<strong>Eksekusi Pengiriman Logistik (Outbound Delivery & Picking):</strong> Menyiapkan surat jalan pengiriman resmi (*Outbound Delivery #80000007*), menentukan titik pengiriman (*Shipping Point*), dan mencatat instruksi pengambilan fisik barang di rak gudang (*picking*) untuk diberangkatkan ke Washington DC.',
-      '<strong>Siklus Pelengkap Pengadaan Material (P2P):</strong> Menjalankan Purchase Order (PO #4500000003) hingga verifikasi penerimaan fisik material di gudang (Goods Receipt #5000000011) guna memastikan ketersediaan kuantitas stok barang di pabrik Miami (Plant MI28).'
+      '<strong>Penyusunan Struktur Organisasi Penjualan & Pengadaan:</strong> Mengonfigurasi struktur organisasi enterprise pada sistem SAP, mencakup Sales Organization, Distribution Channels (Wholesale & Internet), Divisi produk, penentuan Sales Area terpadu, hingga penetapan Shipping Points dan Purchasing Organization.',
+      '<strong>Pengaturan Master Data Pelanggan & Material Penjualan:</strong> Mendaftarkan data induk pelanggan (Business Partner) ke dalam sistem lengkap dengan penetapan area penjualan, serta melengkapi master data material produk dengan tampilan penjualan (Sales Views) untuk validitas transaksi.',
+      '<strong>Penetapan Skema Harga Jual & Integrasi Akuntansi (SD-FI):</strong> Mengonfigurasi skema harga jual otomatis (Pricing Condition) dan menghubungkan alur penjualan langsung ke modul akuntansi keuangan (Automatic Account Assignment), sehingga seluruh pendapatan tercatat otomatis ke buku besar tanpa intervensi manual.',
+      '<strong>Pembuatan Dokumen Pesanan Penjualan (Sales Order):</strong> Menerbitkan dokumen pesanan penjualan resmi (Sales Order) yang langsung mereferensikan dokumen penawaran harga resmi (Sales Quotation), memvalidasi kuantitas item barang, syarat pembayaran, serta menetapkan jadwal pengiriman produk secara presisi.',
+      '<strong>Eksekusi Pengiriman Logistik (Outbound Delivery & Picking):</strong> Memproses dokumen pengiriman resmi (Outbound Delivery), menentukan titik pengiriman logistik (Shipping Point), dan mencatat instruksi pengambilan fisik barang di rak gudang (picking) untuk siap diberangkatkan ke lokasi pelanggan.',
+      '<strong>Siklus Pelengkap Pengadaan Material (P2P):</strong> Menjalankan siklus pengadaan persediaan dari penerbitan pesanan pembelian (Purchase Order) hingga verifikasi penerimaan fisik barang di gudang (Goods Receipt) guna menjamin ketersediaan stok produk saat pesanan datang.'
     ],
     impact: 'Membuktikan keberhasilan implementasi siklus Order-to-Cash (O2C) dan Procure-to-Pay (P2P) yang saling terintegrasi penuh: meminimalkan human error pada pesanan pelanggan, memastikan konsistensi harga jual, dan menghasilkan pencatatan keuangan yang otomatis dan transparan.',
     visuals: [
       {
         src: 'assets/projects/sap_p2p_po.png',
         title: 'Bukti Penerimaan Barang di Gudang (Goods Receipt)',
-        desc: 'Tangkapan layar alur penerimaan fisik barang pesanan (PO #4500000003) di gudang pabrik Miami (Plant MI28 / Storage Location TG28). Menampilkan verifikasi 5 material perlengkapan (Knee Pads, Elbow Pads, Road Helmet, Off Road Helmet, dan Repair Kit masing-masing 50 unit) hingga sistem resmi menerbitkan dokumen material sukses (Material Document #5000000011).'
+        desc: 'Tangkapan layar alur penerimaan fisik barang pesanan (Purchase Order) di gudang pabrik. Menampilkan verifikasi kuantitas material perlengkapan hingga sistem resmi menerbitkan dokumen penerimaan barang (Goods Receipt).'
       },
       {
         src: 'assets/projects/sap_o2c_so.png',
         title: 'Pembuatan Dokumen Pesanan Penjualan (Sales Order)',
-        desc: 'Tangkapan layar dokumen pesanan resmi pelanggan (Create Standard Order: Overview) untuk customer Company 28 DC Bikes (#1003053) dengan referensi #1028. Sistem secara otomatis menghitung nilai total transaksi sebesar $3,509.00 USD untuk 4 jenis material pesanan (Elbow Pads, Road Helmet, Repair Kit, Off Road Helmet) serta menentukan jadwal pengiriman ke Washington DC.'
+        desc: 'Tangkapan layar dokumen pesanan resmi pelanggan (Sales Order). Sistem secara otomatis menghitung nilai total transaksi untuk material pesanan serta menentukan jadwal pengiriman resmi ke lokasi pelanggan.'
       },
       {
         src: 'assets/projects/sap_o2c_delivery.png',
         title: 'Surat Jalan & Pengambilan Barang (Delivery & Picking)',
-        desc: 'Instruksi kerja bagi tim logistik untuk mengambil barang dari rak gudang (picking) berdasarkan pesanan pelanggan dan menyiapkan dokumen pengiriman resmi (Outbound Delivery #80000007) sebelum barang diberangkatkan.'
+        desc: 'Instruksi kerja bagi tim logistik untuk mengambil barang dari rak gudang (picking) berdasarkan pesanan pelanggan dan menyiapkan dokumen pengiriman resmi (Outbound Delivery) sebelum barang diberangkatkan.'
       }
     ]
   },
@@ -60,8 +60,8 @@ const projects = [
     tags: ['SAP Fiori Elements', 'OData Service', 'ABAP Tables', 'Aplikasi Web'],
     problem: 'Pengajuan dan pencatatan belanja alat tulis kantor sebelumnya dilakukan manual dengan lembaran formulir atau spreadsheet terpisah. Hal ini memperlambat proses persetujuan dan membuat manajemen sulit mengontrol sisa anggaran tahunan.',
     steps: [
-      '<strong>Perancangan Tabel Database:</strong> Menyusun struktur penyimpanan data di backend SAP (tabel ZEXPENSE_7, ZDEPARTMENT_7, ZOFFICE_SUPPLY) untuk mencatat data pengajuan, divisi pemohon, dan nominal biaya secara teratur.',
-      '<strong>Pembangunan Jembatan Data (OData Service):</strong> Mengembangkan jalur komunikasi aman (API OData ZUMN_EXPENSE_SRV di transaksi SEGW) yang menghubungkan antarmuka web dengan pusat data SAP S/4 HANA.',
+      '<strong>Perancangan Tabel Database:</strong> Menyusun struktur penyimpanan data di backend SAP untuk mencatat data pengajuan pengeluaran kantor, master data divisi, dan nominal anggaran secara teratur.',
+      '<strong>Pembangunan Jembatan Data (OData Service):</strong> Mengembangkan jalur komunikasi API OData Service yang menghubungkan antarmuka web Fiori dengan pusat database SAP S/4HANA secara aman dan real-time.',
       '<strong>Pembuatan Antarmuka Web (Fiori Elements):</strong> Menggunakan standar antarmuka SAP modern (List Report) yang bersih, mudah digunakan di komputer maupun tablet, serta dilengkapi filter pencarian cepat.',
       '<strong>Fitur Pelacakan Status:</strong> Menampilkan status pengajuan (disetujui/Approved, ditolak/Rejected, atau dalam proses) agar setiap divisi mendapatkan kejelasan informasi tanpa harus menanyakan manual.'
     ],
@@ -79,7 +79,7 @@ const projects = [
       },
       {
         src: 'assets/projects/fiori_arch_db.png',
-        title: 'Arsitektur Data & Pemetaan OData Service (SEGW)',
+        title: 'Arsitektur Data & Pemetaan OData Service',
         desc: 'Struktur teknis di balik layar yang menghubungkan antarmuka web Fiori dengan server database SAP S/4 HANA via OData Service agar data transaksi tersimpan aman dan akurat.'
       }
     ]
