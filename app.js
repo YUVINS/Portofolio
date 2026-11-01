@@ -312,7 +312,7 @@ function renderProjects(filter = 'all') {
 
   filtered.forEach(p => {
     const card = document.createElement('div');
-    card.className = 'glass-card rounded-2xl bg-surface-850/80 border border-surface-800 hover:border-brand-gold/40 flex flex-col justify-between overflow-hidden transition-all duration-300';
+    card.className = 'bento-card rounded-3xl flex flex-col justify-between overflow-hidden transition-all duration-300';
     
     // Tag pills HTML
     const tagsHtml = p.tags.map(t => `<span class="skill-tag">${t}</span>`).join('');
@@ -320,18 +320,18 @@ function renderProjects(filter = 'all') {
 
     card.innerHTML = `
       <!-- Project Thumbnail Banner -->
-      <div class="h-48 w-full overflow-hidden relative bg-surface-900 border-b border-surface-800 group cursor-pointer" onclick="openModal('${p.id}')">
+      <div class="h-52 w-full overflow-hidden relative bg-surface-950 border-b border-white/10 group cursor-pointer" onclick="openModal('${p.id}')">
         <img src="${featuredImg.src}" alt="${p.title}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
-        <div class="absolute inset-0 bg-gradient-to-t from-surface-850 via-surface-900/30 to-transparent"></div>
-        <div class="absolute top-3 left-3">
-          <span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-surface-900/90 text-brand-gold border border-brand-gold/30 backdrop-blur-sm shadow">
+        <div class="absolute inset-0 bg-gradient-to-t from-surface-900 via-surface-900/20 to-transparent"></div>
+        <div class="absolute top-3.5 left-3.5">
+          <span class="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-surface-900/90 text-brand-gold border border-brand-gold/30 backdrop-blur-sm shadow">
             ${p.categoryLabel}
           </span>
         </div>
-        <div class="absolute top-3 right-3 text-xs text-slate-300 font-mono bg-surface-900/90 px-2.5 py-0.5 rounded-md backdrop-blur-sm border border-slate-700/60 shadow">
+        <div class="absolute top-3.5 right-3.5 text-xs text-slate-300 font-mono bg-surface-900/90 px-2.5 py-1 rounded-lg backdrop-blur-sm border border-white/10 shadow">
           ${p.year}
         </div>
-        <div class="absolute bottom-2 right-2 px-2.5 py-1 rounded-lg bg-black/80 text-[11px] text-brand-light flex items-center gap-1.5 backdrop-blur-sm border border-white/10 shadow">
+        <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/85 text-[11px] text-brand-light flex items-center gap-1.5 backdrop-blur-sm border border-brand-gold/30 shadow">
           <i data-lucide="image" class="w-3.5 h-3.5 text-brand-gold"></i>
           <span>${p.visuals.length} Visual Nyata</span>
         </div>
@@ -343,7 +343,7 @@ function renderProjects(filter = 'all') {
           <h4 class="text-lg font-bold text-white hover:text-brand-gold transition-colors leading-snug cursor-pointer" onclick="openModal('${p.id}')">
             ${p.title}
           </h4>
-          <p class="text-xs text-brand-light/90 font-mono">
+          <p class="text-xs text-brand-light font-mono">
             ${p.subtitle}
           </p>
           <p class="text-xs sm:text-sm text-slate-300 leading-relaxed pt-1">
@@ -351,11 +351,11 @@ function renderProjects(filter = 'all') {
           </p>
         </div>
 
-        <div class="pt-3 border-t border-surface-800/80 space-y-4">
+        <div class="pt-3 border-t border-white/10 space-y-4">
           <div class="flex flex-wrap gap-1.5 items-center">
             ${tagsHtml}
           </div>
-          <button onclick="openModal('${p.id}')" class="w-full py-2.5 px-4 rounded-xl bg-surface-800 hover:bg-surface-700 hover:border-brand-gold/40 border border-slate-700/80 text-xs font-bold text-slate-200 flex items-center justify-center gap-2 group transition-all">
+          <button onclick="openModal('${p.id}')" class="w-full py-2.5 px-4 rounded-2xl bg-surface-800 hover:bg-surface-750 hover:border-brand-gold/40 border border-white/10 text-xs font-bold text-slate-200 flex items-center justify-center gap-2 group transition-all">
             <span>Buka Detail Kasus & 3 Visual Nyata</span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-brand-gold group-hover:translate-x-1 transition-transform"></i>
           </button>

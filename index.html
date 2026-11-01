@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kelvin Alexander | Portfolio - Data & ERP Enthusiast</title>
-  <meta name="description" content="Portofolio resmi Kelvin Alexander - Mahasiswa Sistem Informasi UMN berfokus pada S/4 HANA, SAP Fiori, Business Intelligence, dan Deep Learning.">
+  <title>Kelvin Alexander | Bento Tech Portfolio - Data & ERP Enthusiast</title>
+  <meta name="description" content="Portofolio resmi Kelvin Alexander - Mahasiswa Sistem Informasi UMN berfokus pada SAP S/4HANA, SAP Fiori, Power BI, Tableau, dan Deep Learning.">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -30,10 +30,12 @@
               dark: '#78350F'
             },
             surface: {
-              900: '#0B0F19',
-              850: '#0F172A',
-              800: '#1E293B',
-              700: '#334155',
+              950: '#060709',
+              900: '#09090B',
+              850: '#11131A',
+              800: '#181B26',
+              750: '#222638',
+              700: '#2E344A',
             }
           }
         }
@@ -44,33 +46,34 @@
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Custom Styles -->
+  <!-- Custom Bento Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-surface-900 text-slate-200 font-sans selection:bg-brand-gold selection:text-black min-h-screen relative overflow-x-hidden">
+<body class="bg-surface-900 text-slate-200 font-sans selection:bg-brand-gold selection:text-black min-h-screen relative overflow-x-hidden bg-grid-pattern">
 
-  <!-- Ambient Glow Effects Background -->
+  <!-- Ambient Glow Spotlights -->
   <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-    <div class="absolute -top-40 -left-40 w-96 h-96 bg-brand-gold/10 rounded-full blur-[120px]"></div>
-    <div class="absolute top-1/3 -right-40 w-96 h-96 bg-blue-500/10 rounded-full blur-[140px]"></div>
-    <div class="absolute bottom-20 left-1/4 w-80 h-80 bg-emerald-500/10 rounded-full blur-[130px]"></div>
+    <div class="absolute -top-32 left-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[130px]"></div>
+    <div class="absolute top-1/3 -right-20 w-[450px] h-[450px] bg-brand-gold/10 rounded-full blur-[140px]"></div>
+    <div class="absolute -bottom-20 left-10 w-[500px] h-[500px] bg-emerald-600/10 rounded-full blur-[140px]"></div>
   </div>
 
-  <!-- Navigation Bar -->
-  <header class="sticky top-0 z-40 backdrop-blur-md bg-surface-900/80 border-b border-surface-800/80 transition-all duration-300">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2 group">
-        <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-brand-amber to-brand-gold flex items-center justify-center text-black font-extrabold text-lg shadow-lg shadow-brand-gold/20 group-hover:scale-105 transition-transform">
+  <!-- FLOATING DOCK NAVIGATION -->
+  <header class="fixed top-4 inset-x-0 z-50 flex justify-center px-4 pointer-events-none">
+    <div class="floating-dock pointer-events-auto rounded-full px-4 sm:px-6 py-2.5 flex items-center justify-between gap-4 sm:gap-8 max-w-4xl w-full">
+      <!-- Brand Monogram -->
+      <a href="#hero" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-amber via-brand-gold to-amber-200 flex items-center justify-center text-black font-extrabold text-sm shadow-md shadow-brand-gold/20 group-hover:scale-105 transition-transform">
           KA
         </div>
-        <div class="flex flex-col">
-          <span class="font-bold text-white text-sm sm:text-base tracking-tight leading-none group-hover:text-brand-gold transition-colors">Kelvin Alexander</span>
-          <span class="text-[11px] text-slate-400 font-mono leading-tight mt-0.5">Data & ERP Enthusiast</span>
+        <div class="hidden sm:flex flex-col">
+          <span class="font-bold text-white text-xs tracking-tight group-hover:text-brand-gold transition-colors">Kelvin Alexander</span>
+          <span class="text-[10px] text-slate-400 font-mono leading-none">Data & ERP</span>
         </div>
       </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+      <!-- Navigation Links -->
+      <nav class="flex items-center gap-4 sm:gap-6 text-xs font-semibold text-slate-300">
         <a href="#tentang" class="hover:text-brand-gold transition-colors">Tentang</a>
         <a href="#proyek" class="hover:text-brand-gold transition-colors">Proyek</a>
         <a href="#keahlian" class="hover:text-brand-gold transition-colors">Keahlian</a>
@@ -78,145 +81,249 @@
         <a href="#kontak" class="hover:text-brand-gold transition-colors">Kontak</a>
       </nav>
 
-      <!-- Action Button -->
-      <div class="flex items-center gap-3">
-        <a href="#kontak" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-surface-800 hover:bg-surface-700 text-slate-200 border border-slate-700 hover:border-slate-600 transition-all">
-          <i data-lucide="mail" class="w-3.5 h-3.5 text-brand-gold"></i>
-          <span>Hubungi</span>
+      <!-- Quick Actions -->
+      <div class="flex items-center gap-2">
+        <a href="https://github.com/YUVINS" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-surface-800 hover:bg-surface-750 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all" title="GitHub Profile">
+          <i data-lucide="github" class="w-4 h-4"></i>
         </a>
-        <a href="#proyek" class="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-lg bg-gradient-to-r from-brand-amber to-brand-gold text-black hover:brightness-110 shadow-md shadow-brand-gold/20 transition-all hover:scale-[1.02]">
-          <span>Eksplor Proyek</span>
-          <i data-lucide="arrow-down-right" class="w-3.5 h-3.5"></i>
+        <a href="#kontak" class="hidden md:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-brand-amber to-brand-gold text-black text-xs font-bold hover:brightness-110 shadow-sm shadow-brand-gold/30 transition-all hover:scale-[1.02]">
+          <span>Hubungi</span>
+          <i data-lucide="arrow-right" class="w-3 h-3"></i>
         </a>
       </div>
     </div>
   </header>
 
-  <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-24">
+  <!-- MAIN WRAPPER -->
+  <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 space-y-20">
 
-    <!-- HERO SECTION -->
-    <section id="hero" class="pt-6 sm:pt-10 flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
-      <div class="flex-1 space-y-6 text-center lg:text-left">
-        <!-- Status Pill -->
-        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface-800 border border-emerald-500/30 text-emerald-400 text-xs font-medium">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>Open for Internship & Entry-Level Opportunities</span>
+    <!-- 1. HERO BENTO SECTION -->
+    <section id="hero" class="space-y-5">
+      <!-- Upper Bento Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+        
+        <!-- Bento 1: Primary Profile Showcase (8 cols) -->
+        <div class="lg:col-span-8 bento-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <!-- Availability Pill -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-medium">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Available for Internship & Entry-Level Roles</span>
+            </div>
+
+            <div class="space-y-2">
+              <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                Halo, saya <span class="text-shimmer">Kelvin Alexander</span>
+              </h1>
+              <p class="text-sm sm:text-base font-semibold text-slate-300 font-mono flex items-center gap-2">
+                <i data-lucide="sparkles" class="w-4 h-4 text-brand-gold"></i>
+                <span>Information Systems Student @ UMN • Data & ERP Enthusiast</span>
+              </p>
+            </div>
+
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-2xl">
+              Mahasiswa Sistem Informasi di <strong class="text-white">Universitas Multimedia Nusantara</strong> dengan minat besar pada alur proses bisnis <strong class="text-brand-light">S/4 HANA & SAP Fiori</strong> serta pemodelan analitik data berbasis <strong class="text-brand-light">Power BI, Tableau, dan Deep Learning</strong>.
+            </p>
+          </div>
+
+          <div class="space-y-4 pt-2">
+            <!-- Interactive Action CTAs -->
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="#proyek" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-amber via-brand-gold to-amber-300 text-black font-extrabold text-xs flex items-center gap-2 hover:brightness-110 transition-all shadow-lg shadow-brand-gold/25 hover:scale-[1.02]">
+                <i data-lucide="layers" class="w-4 h-4"></i>
+                <span>Eksplorasi 7 Studi Kasus</span>
+              </a>
+              <button id="copyEmailHeroBtn" class="px-4 py-2.5 rounded-xl bg-surface-800 hover:bg-surface-750 text-slate-200 border border-white/10 hover:border-brand-gold/40 text-xs font-semibold flex items-center gap-2 transition-all">
+                <i data-lucide="copy" class="w-3.5 h-3.5 text-brand-gold"></i>
+                <span id="copyEmailHeroText">Salin Email</span>
+              </button>
+              <a href="https://github.com/YUVINS" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-surface-800/60 hover:bg-surface-750 text-slate-300 hover:text-white border border-white/10 text-xs font-semibold flex items-center gap-2 transition-all">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                <span>GitHub Profile</span>
+              </a>
+            </div>
+
+            <!-- Quick Tech Chips Bar -->
+            <div class="pt-3 border-t border-white/10 flex flex-wrap items-center gap-2">
+              <span class="text-[11px] font-mono text-slate-400">Core Stack:</span>
+              <span class="skill-tag">SAP S/4HANA</span>
+              <span class="skill-tag">SAP Fiori</span>
+              <span class="skill-tag">Power BI</span>
+              <span class="skill-tag">Tableau</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">VS Code</span>
+            </div>
+          </div>
         </div>
 
-        <div class="space-y-3">
-          <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            Halo, saya <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-amber-200 to-amber-400">Kelvin Alexander</span>
-          </h1>
-          <p class="text-lg sm:text-xl font-medium text-slate-300 font-mono">
-            Information Systems Student | Data & ERP Enthusiast
-          </p>
-        </div>
-
-        <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto lg:mx-0">
-          Mahasiswa Sistem Informasi di <strong class="text-slate-200">Universitas Multimedia Nusantara</strong> dengan minat besar pada alur proses bisnis <strong class="text-brand-light">S/4 HANA & SAP Fiori</strong> serta pemodelan analitik data berbasis <strong class="text-brand-light">Power BI, Tableau, dan Deep Learning</strong>.
-        </p>
-
-        <!-- CTA Buttons -->
-        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-          <a href="#proyek" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-amber to-brand-gold text-black font-bold text-sm flex items-center gap-2 hover:brightness-110 transition-all shadow-lg shadow-brand-gold/25 hover:scale-[1.02]">
-            <i data-lucide="layers" class="w-4 h-4"></i>
-            <span>Lihat Hasil Studi Kasus</span>
-          </a>
-          <button id="copyEmailHeroBtn" class="px-5 py-2.5 rounded-xl bg-surface-800 hover:bg-surface-700 text-slate-200 border border-slate-700 hover:border-slate-600 font-medium text-sm flex items-center gap-2 transition-all">
-            <i data-lucide="copy" class="w-4 h-4 text-brand-gold"></i>
-            <span id="copyEmailHeroText">Salin Email</span>
-          </button>
-          <a href="#kontak" class="px-5 py-2.5 rounded-xl bg-transparent hover:bg-surface-800 text-slate-300 font-medium text-sm flex items-center gap-2 transition-all">
-            <i data-lucide="message-square" class="w-4 h-4"></i>
-            <span>Kontak Cepat</span>
-          </a>
-        </div>
-
-        <!-- Quick Metrics Grid -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-surface-800/80">
-          <div class="p-3.5 rounded-xl bg-surface-850/60 border border-surface-800 text-center lg:text-left">
-            <div class="text-xl sm:text-2xl font-extrabold text-brand-gold font-mono">3.56<span class="text-xs text-slate-400 font-sans">/4.00</span></div>
-            <div class="text-[11px] text-slate-400 font-medium mt-0.5">IPK Mahasiswa UMN</div>
+        <!-- Bento 2: Profile & Identity Card (4 cols) -->
+        <div class="lg:col-span-4 bento-card rounded-3xl p-6 flex flex-col justify-between items-center text-center space-y-4">
+          <div class="relative group my-auto">
+            <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-brand-gold via-blue-500 to-emerald-500 opacity-60 blur-md group-hover:opacity-100 transition duration-500"></div>
+            <div class="relative w-40 h-40 sm:w-44 sm:h-44 rounded-2xl overflow-hidden border-2 border-white/15 bg-surface-850 shadow-xl flex items-center justify-center">
+              <img src="assets/profile.png" alt="Kelvin Alexander" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://ui-avatars.com/api/?name=Kelvin+Alexander&background=D97706&color=fff&size=256'">
+            </div>
           </div>
-          <div class="p-3.5 rounded-xl bg-surface-850/60 border border-surface-800 text-center lg:text-left">
-            <div class="text-xl sm:text-2xl font-extrabold text-blue-400 font-mono">S/4 HANA</div>
-            <div class="text-[11px] text-slate-400 font-medium mt-0.5">Sistem ERP</div>
-          </div>
-          <div class="p-3.5 rounded-xl bg-surface-850/60 border border-surface-800 text-center lg:text-left">
-            <div class="text-xl sm:text-2xl font-extrabold text-emerald-400 font-mono">SAP Fiori</div>
-            <div class="text-[11px] text-slate-400 font-medium mt-0.5">Aplikasi Web</div>
-          </div>
-          <div class="p-3.5 rounded-xl bg-surface-850/60 border border-surface-800 text-center lg:text-left">
-            <div class="text-xl sm:text-2xl font-extrabold text-purple-400 font-mono">Deep Learning</div>
-            <div class="text-[11px] text-slate-400 font-medium mt-0.5">Pipeline AI & Audio</div>
+
+          <div class="space-y-2 w-full">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-800 border border-brand-gold/30 text-brand-gold text-[11px] font-mono font-semibold">
+              <i data-lucide="badge-check" class="w-3.5 h-3.5 text-emerald-400"></i>
+              <span>NIM: 00000106797</span>
+            </div>
+            <div class="text-xs text-slate-400 font-mono">
+              Universitas Multimedia Nusantara • Angkatan 2024
+            </div>
+
+            <!-- Social Links Strip -->
+            <div class="pt-2 flex items-center justify-center gap-2">
+              <a href="https://wa.me/6285281649108" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-surface-800 hover:bg-emerald-500/20 text-slate-300 hover:text-emerald-400 border border-white/10 transition-all" title="WhatsApp">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+              </a>
+              <a href="mailto:kelvin.alexander@student.umn.ac.id" class="p-2 rounded-lg bg-surface-800 hover:bg-brand-gold/20 text-slate-300 hover:text-brand-gold border border-white/10 transition-all" title="Email">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+              </a>
+              <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-surface-800 hover:bg-blue-500/20 text-slate-300 hover:text-blue-400 border border-white/10 transition-all" title="LinkedIn">
+                <i data-lucide="linkedin" class="w-4 h-4"></i>
+              </a>
+              <a href="https://github.com/YUVINS" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-surface-800 hover:bg-purple-500/20 text-slate-300 hover:text-purple-400 border border-white/10 transition-all" title="GitHub">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Hero Profile Card / Image -->
-      <div class="relative group">
-        <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-brand-gold via-amber-500 to-blue-500 opacity-70 blur-md group-hover:opacity-100 transition duration-500 animate-tilt"></div>
-        <div class="relative w-44 h-44 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-surface-800 bg-surface-850 shadow-2xl flex items-center justify-center">
-          <img src="assets/profile.png" alt="Kelvin Alexander" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://ui-avatars.com/api/?name=Kelvin+Alexander&background=D97706&color=fff&size=256'">
+      <!-- Lower Bento Grid: Key Metrics Quad -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- Stat Bento 1: IPK -->
+        <div class="bento-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between space-y-2 cursor-pointer group" onclick="openAcademicProof()">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono">
+            <span>IPK Portal UMN</span>
+            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+          </div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-brand-gold font-mono group-hover:scale-105 transition-transform">
+            3.56<span class="text-xs text-slate-400 font-sans font-normal"> /4.00</span>
+          </div>
+          <div class="flex items-center gap-1 text-[11px] text-emerald-400 font-medium">
+            <span>Verifikasi Resmi</span>
+            <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+          </div>
         </div>
-        <div class="absolute bottom-2 right-2 px-3 py-1 bg-surface-900/90 border border-brand-gold/40 rounded-full text-[11px] font-mono text-brand-gold shadow-lg backdrop-blur-sm flex items-center gap-1.5">
-          <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
-          <span>Verified Student</span>
+
+        <!-- Stat Bento 2: IPS -->
+        <div class="bento-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between space-y-2">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono">
+            <span>IPS Terakhir</span>
+            <i data-lucide="trending-up" class="w-4 h-4 text-blue-400"></i>
+          </div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">
+            3.67<span class="text-xs text-slate-400 font-sans font-normal"> /4.00</span>
+          </div>
+          <div class="text-[11px] text-slate-400 font-mono">
+            Semester Aktif
+          </div>
+        </div>
+
+        <!-- Stat Bento 3: Real Projects -->
+        <div class="bento-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between space-y-2">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono">
+            <span>Studi Kasus</span>
+            <i data-lucide="folder-git-2" class="w-4 h-4 text-purple-400"></i>
+          </div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">
+            7 <span class="text-sm font-sans text-slate-300 font-medium">Proyek</span>
+          </div>
+          <div class="text-[11px] text-slate-400 font-mono">
+            ERP, BI & Deep Learning
+          </div>
+        </div>
+
+        <!-- Stat Bento 4: Career Target -->
+        <div class="bento-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between space-y-2">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono">
+            <span>Fokus Karier</span>
+            <i data-lucide="compass" class="w-4 h-4 text-amber-400"></i>
+          </div>
+          <div class="text-base sm:text-lg font-bold text-white leading-tight">
+            SAP & BI Consultant
+          </div>
+          <div class="text-[11px] text-slate-400 font-mono">
+            Tangerang, Banten
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT SECTION -->
+    <!-- 2. ABOUT BENTO SECTION -->
     <section id="tentang" class="space-y-6">
       <div class="flex items-center gap-3">
         <div class="w-8 h-1 bg-brand-gold rounded-full"></div>
         <h2 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-gold font-mono">Tentang Saya</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="md:col-span-2 p-6 sm:p-8 rounded-2xl bg-surface-850/80 border border-surface-800 space-y-4">
-          <h3 class="text-xl sm:text-2xl font-bold text-white">Menghubungkan Alur Bisnis Nyata dengan Arsitektur Data Modern</h3>
-          <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-            Sebagai mahasiswa Sistem Informasi, saya menggabungkan perspektif proses bisnis dan analisis data. Di satu sisi, saya memahami bagaimana proses bisnis perusahaan beroperasi melalui konfigurasi sistem <strong class="text-slate-100">S/4 HANA dan SAP Fiori</strong> serta integrasi otomatis dengan akuntansi keuangan.
-          </p>
-          <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-            Di sisi lain, saya memiliki ketertarikan kuat dalam rekayasa data dan kecerdasan buatan, memanfaatkan <strong class="text-slate-100">SQL, Power BI, Tableau, VS Code, dan machine learning</strong> untuk memproses data mentah menjadi wawasan bisnis yang mudah dipahami dan bernilai strategis.
-          </p>
-          <div class="pt-2 flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-lg bg-surface-800 text-xs text-slate-300 border border-slate-700/60 font-mono">Analytical Thinking</span>
-            <span class="px-3 py-1 rounded-lg bg-surface-800 text-xs text-slate-300 border border-slate-700/60 font-mono">Business Process Mapping</span>
-            <span class="px-3 py-1 rounded-lg bg-surface-800 text-xs text-slate-300 border border-slate-700/60 font-mono">Tableau & Power BI</span>
-            <span class="px-3 py-1 rounded-lg bg-surface-800 text-xs text-slate-300 border border-slate-700/60 font-mono">Visual Studio Code</span>
-            <span class="px-3 py-1 rounded-lg bg-surface-800 text-xs text-slate-300 border border-slate-700/60 font-mono">Data Modeling</span>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+        <!-- Main Narrative Bento (7 cols) -->
+        <div class="lg:col-span-7 bento-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-4">
+          <div class="space-y-4">
+            <h3 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+              Menghubungkan Alur Bisnis Enterprise dengan Analisis Data Modern
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Sebagai mahasiswa Sistem Informasi, saya menggabungkan perspektif proses bisnis enterprise dan rekayasa data. Di satu sisi, saya memahami bagaimana proses bisnis perusahaan beroperasi secara nyata melalui konfigurasi modul <strong class="text-white">SAP S/4HANA (P2P & O2C)</strong> serta integrasi antarmuka modern <strong class="text-brand-light">SAP Fiori</strong> dengan jurnal akuntansi keuangan (FI).
+            </p>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Di sisi lain, saya memiliki ketertarikan kuat dalam rekayasa data dan *business intelligence*, memanfaatkan <strong class="text-white">SQL, Microsoft Power BI, Tableau, VS Code, dan machine learning</strong> untuk memproses data mentah menjadi wawasan bisnis prediktif yang mudah dipahami dan bernilai strategis.
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-white/10 flex flex-wrap gap-2">
+            <span class="skill-tag">Analytical Thinking</span>
+            <span class="skill-tag">Business Process Mapping</span>
+            <span class="skill-tag">Snowflake Schema Modeling</span>
+            <span class="skill-tag">Executive BI Dashboard</span>
+            <span class="skill-tag">ERP Logistics & Finance</span>
           </div>
         </div>
 
-        <div class="p-6 rounded-2xl bg-gradient-to-br from-surface-850 to-surface-800 border border-surface-700/60 flex flex-col justify-between space-y-6">
-          <div class="space-y-3">
+        <!-- Career Focus Bento (5 cols) -->
+        <div class="lg:col-span-5 bento-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
             <div class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold">
               <i data-lucide="target" class="w-5 h-5"></i>
             </div>
-            <h4 class="text-base font-bold text-white">Fokus Minat Karier</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">
-              Mempersiapkan diri untuk posisi <strong class="text-slate-200">SAP Functional Consultant</strong>, <strong class="text-slate-200">Data Analyst</strong>, atau <strong class="text-slate-200">Business Intelligence Analyst</strong>.
-            </p>
+            <div>
+              <h4 class="text-base font-bold text-white">Target Posisi & Minat Profesional</h4>
+              <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                Mempersiapkan diri untuk berkontribusi secara profesional di dunia industri pada posisi:
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <div class="p-2.5 rounded-xl bg-surface-800/80 border border-white/5 flex items-center gap-3">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <span class="text-xs font-semibold text-slate-200">SAP Functional Consultant (MM / SD)</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-surface-800/80 border border-white/5 flex items-center gap-3">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <span class="text-xs font-semibold text-slate-200">Business Intelligence (BI) Analyst</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-surface-800/80 border border-white/5 flex items-center gap-3">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <span class="text-xs font-semibold text-slate-200">Data & Systems Analyst</span>
+              </div>
+            </div>
           </div>
-          <div class="border-t border-surface-700/60 pt-4 space-y-2">
-            <div class="flex items-center justify-between text-xs">
-              <span class="text-slate-400">Domisili</span>
-              <span class="text-slate-200 font-medium">Tangerang, Banten</span>
-            </div>
-            <div class="flex items-center justify-between text-xs">
-              <span class="text-slate-400">Status</span>
-              <span class="text-emerald-400 font-medium">Active Undergraduate</span>
-            </div>
+
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-slate-400">
+            <span>Status: Aktif Sarjana (SI UMN)</span>
+            <span>Domisili: Tangerang</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
-    <section id="proyek" class="space-y-8">
+    <!-- 3. PROJECTS BENTO SECTION -->
+    <section id="proyek" class="space-y-6">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div class="space-y-2">
           <div class="flex items-center gap-3">
@@ -224,101 +331,111 @@
             <h2 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-gold font-mono">Portofolio & Studi Kasus</h2>
           </div>
           <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Hasil Proyek & Visualisasi Nyata</h3>
-          <p class="text-xs sm:text-sm text-slate-400">Setiap proyek dilengkapi penjelasan yang jelas dan minimal 3 visualisasi penting beresolusi tinggi dari hasil pekerjaan asli.</p>
+          <p class="text-xs sm:text-sm text-slate-400">
+            Menampilkan 7 studi kasus terverifikasi. Setiap proyek dilengkapi penjelasan alur bisnis, langkah implementasi, serta minimal 3 bukti visual asli beresolusi tinggi.
+          </p>
         </div>
 
-        <!-- Filter Buttons -->
-        <div class="flex flex-wrap gap-2 p-1.5 rounded-xl bg-surface-850 border border-surface-800" id="filterContainer">
-          <button class="filter-btn active px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all" data-filter="all">Semua</button>
-          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition-all" data-filter="erp">SAP & ERP</button>
-          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition-all" data-filter="data">Data & ML</button>
-          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition-all" data-filter="fiori">Fiori & Web</button>
+        <!-- Filter Tab Buttons Container -->
+        <div class="flex flex-wrap gap-1.5 p-1.5 rounded-2xl bg-surface-850/90 border border-white/10" id="filterContainer">
+          <button class="filter-btn active px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all" data-filter="all">Semua (7)</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition-all" data-filter="erp">SAP & ERP (2)</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition-all" data-filter="data">Data & BI (5)</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition-all" data-filter="fiori">Fiori & Web (1)</button>
         </div>
       </div>
 
-      <!-- Project Cards Grid (Populated via app.js) -->
+      <!-- Project Cards Grid (Populated dynamically via app.js) -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projectsGrid">
-        <!-- Rendered by JS -->
+        <!-- Rendered by app.js -->
       </div>
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section id="keahlian" class="space-y-8">
+    <!-- 4. SKILLS & TOOLS BENTO MATRIX -->
+    <section id="keahlian" class="space-y-6">
       <div class="space-y-2">
         <div class="flex items-center gap-3">
           <div class="w-8 h-1 bg-brand-gold rounded-full"></div>
           <h2 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-gold font-mono">Keahlian & Teknologi</h2>
         </div>
         <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Software & Tools yang Dikuasai</h3>
-        <p class="text-xs sm:text-sm text-slate-400">Daftar software dan perangkat lunak yang saya gunakan dalam perkuliahan dan pengerjaan proyek studi kasus.</p>
+        <p class="text-xs sm:text-sm text-slate-400">Perangkat lunak dan teknologi yang digunakan dalam perkuliahan Sistem Informasi dan penyelesaian seluruh studi kasus.</p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Card 1: ERP -->
-        <div class="p-6 rounded-2xl bg-surface-850/80 border border-surface-800 hover:border-brand-gold/40 transition-all duration-300 space-y-4 group">
-          <div class="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
-            <i data-lucide="cpu" class="w-5 h-5"></i>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- Skill 1: ERP -->
+        <div class="bento-card rounded-3xl p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white">Sistem ERP Enterprise</h4>
+              <p class="text-xs text-slate-400 mt-1">Sistem informasi perusahaan & antarmuka modern.</p>
+            </div>
           </div>
-          <div>
-            <h4 class="text-base font-bold text-white">Sistem ERP</h4>
-            <p class="text-xs text-slate-400 mt-1">Sistem informasi enterprise & antarmuka modern.</p>
-          </div>
-          <div class="flex flex-wrap gap-2 pt-2">
-            <span class="skill-tag text-xs font-semibold">SAP S/4HANA</span>
-            <span class="skill-tag text-xs font-semibold">SAP Fiori</span>
-          </div>
-        </div>
-
-        <!-- Card 2: Data & BI -->
-        <div class="p-6 rounded-2xl bg-surface-850/80 border border-surface-800 hover:border-brand-gold/40 transition-all duration-300 space-y-4 group">
-          <div class="w-11 h-11 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform">
-            <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <h4 class="text-base font-bold text-white">Analisis Data & BI</h4>
-            <p class="text-xs text-slate-400 mt-1">Pengelolaan data basis relasional & dasbor analitik.</p>
-          </div>
-          <div class="flex flex-wrap gap-2 pt-2">
-            <span class="skill-tag text-xs font-semibold">MySQL</span>
-            <span class="skill-tag text-xs font-semibold">Microsoft Power BI</span>
-            <span class="skill-tag text-xs font-semibold">Tableau</span>
+          <div class="flex flex-wrap gap-2 pt-2 border-t border-white/5">
+            <span class="skill-tag">SAP S/4HANA</span>
+            <span class="skill-tag">SAP Fiori</span>
           </div>
         </div>
 
-        <!-- Card 3: Tools & Environment -->
-        <div class="p-6 rounded-2xl bg-surface-850/80 border border-surface-800 hover:border-brand-gold/40 transition-all duration-300 space-y-4 group">
-          <div class="w-11 h-11 rounded-xl bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold group-hover:scale-110 transition-transform">
-            <i data-lucide="code" class="w-5 h-5"></i>
+        <!-- Skill 2: BI & Data -->
+        <div class="bento-card rounded-3xl p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+              <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white">Analisis Data & BI</h4>
+              <p class="text-xs text-slate-400 mt-1">Pengelolaan data basis relasional & dasbor analitik.</p>
+            </div>
           </div>
-          <div>
-            <h4 class="text-base font-bold text-white">Tools & Lingkungan</h4>
-            <p class="text-xs text-slate-400 mt-1">Editor kode & lingkungan komputasi interaktif.</p>
-          </div>
-          <div class="flex flex-wrap gap-2 pt-2">
-            <span class="skill-tag text-xs font-semibold">Visual Studio Code</span>
-            <span class="skill-tag text-xs font-semibold">Jupyter Notebook</span>
+          <div class="flex flex-wrap gap-2 pt-2 border-t border-white/5">
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Tableau</span>
           </div>
         </div>
 
-        <!-- Card 4: Bahasa -->
-        <div class="p-6 rounded-2xl bg-surface-850/80 border border-surface-800 hover:border-brand-gold/40 transition-all duration-300 space-y-4 group">
-          <div class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
-            <i data-lucide="globe" class="w-5 h-5"></i>
+        <!-- Skill 3: Tools & Dev -->
+        <div class="bento-card rounded-3xl p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center text-brand-gold">
+              <i data-lucide="code" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white">Tools & Lingkungan</h4>
+              <p class="text-xs text-slate-400 mt-1">Editor kode & lingkungan komputasi analitik.</p>
+            </div>
           </div>
-          <div>
-            <h4 class="text-base font-bold text-white">Bahasa</h4>
-            <p class="text-xs text-slate-400 mt-1">Komunikasi profesional & pemahaman dokumentasi.</p>
+          <div class="flex flex-wrap gap-2 pt-2 border-t border-white/5">
+            <span class="skill-tag">Visual Studio Code</span>
+            <span class="skill-tag">Jupyter Notebook</span>
           </div>
-          <div class="flex flex-wrap gap-2 pt-2">
-            <span class="skill-tag text-xs font-semibold">Bahasa Indonesia (Native)</span>
-            <span class="skill-tag text-xs font-semibold">Bahasa Inggris (Aktif)</span>
+        </div>
+
+        <!-- Skill 4: Bahasa -->
+        <div class="bento-card rounded-3xl p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+              <i data-lucide="globe" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white">Bahasa</h4>
+              <p class="text-xs text-slate-400 mt-1">Komunikasi profesional & pemahaman dokumentasi.</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-2 border-t border-white/5">
+            <span class="skill-tag">Indonesia (Native)</span>
+            <span class="skill-tag">Inggris (Aktif)</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- EDUCATION SECTION WITH ACADEMIC PROOF -->
-    <section id="pendidikan" class="space-y-8">
+    <!-- 5. RIWAYAT AKADEMIK BENTO (WITH OFFICIAL PORTAL PROOF) -->
+    <section id="pendidikan" class="space-y-6">
       <div class="space-y-2">
         <div class="flex items-center gap-3">
           <div class="w-8 h-1 bg-brand-gold rounded-full"></div>
@@ -328,24 +445,25 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-        <!-- UMN Academic Card with Verified Proof -->
-        <div class="p-6 rounded-2xl bg-surface-850/80 border border-surface-800 space-y-4 relative overflow-hidden">
-          <div class="flex items-start justify-between gap-2">
+        <!-- University Card (UMN) -->
+        <div class="bento-card rounded-3xl p-6 sm:p-7 space-y-4 relative overflow-hidden">
+          <div class="flex items-start justify-between gap-3">
             <div>
-              <span class="text-xs font-mono text-brand-gold font-semibold">2024 – Sekarang</span>
-              <h4 class="text-lg font-bold text-white mt-1">S1 Sistem Informasi</h4>
-              <p class="text-sm text-slate-300">Universitas Multimedia Nusantara (UMN)</p>
+              <span class="text-xs font-mono text-brand-gold font-bold">2024 – Sekarang</span>
+              <h4 class="text-lg sm:text-xl font-bold text-white mt-1">S1 Sistem Informasi</h4>
+              <p class="text-xs sm:text-sm text-slate-300">Universitas Multimedia Nusantara (UMN)</p>
             </div>
             <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-bold shrink-0">
               IPK: 3.56 / 4.00
             </span>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed">
+
+          <p class="text-xs text-slate-300 leading-relaxed">
             Mempelajari integrasi Enterprise Resource Planning (ERP), pemodelan proses bisnis, rekayasa basis data, analisis prediktif, dan pengembangan sistem informasi enterprise.
           </p>
 
-          <!-- Verified Portal Transcript Showcase -->
-          <div class="pt-3 border-t border-surface-800 space-y-2.5">
+          <!-- Verified Portal Transcript Box -->
+          <div class="pt-4 border-t border-white/10 space-y-2.5">
             <div class="flex items-center justify-between text-xs font-mono">
               <span class="flex items-center gap-1.5 text-brand-light font-bold">
                 <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
@@ -357,107 +475,128 @@
             </div>
 
             <!-- Clickable Image Thumbnail with Zoom Hint -->
-            <div class="rounded-xl overflow-hidden border border-surface-700 bg-black/60 p-1 group cursor-zoom-in hover:border-brand-gold/60 transition-all relative" onclick="openAcademicProof()">
-              <img src="assets/transkrip_ipk.png" alt="Bukti Transkrip IPK Portal UMN" class="w-full h-auto max-h-36 object-contain rounded-lg group-hover:scale-[1.01] transition-transform">
-              <div class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded bg-black/80 text-[10px] text-brand-gold border border-brand-gold/40 flex items-center gap-1 shadow">
-                <i data-lucide="zoom-in" class="w-3 h-3"></i>
+            <div class="rounded-2xl overflow-hidden border border-white/10 bg-black/60 p-1 group cursor-zoom-in hover:border-brand-gold/60 transition-all relative" onclick="openAcademicProof()">
+              <img src="assets/transkrip_ipk.png" alt="Bukti Transkrip IPK Portal UMN" class="w-full h-auto max-h-36 object-contain rounded-xl group-hover:scale-[1.01] transition-transform">
+              <div class="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-lg bg-black/85 text-[10px] text-brand-gold border border-brand-gold/40 flex items-center gap-1.5 shadow-md">
+                <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i>
                 <span>Klik untuk Zoom</span>
               </div>
             </div>
+
             <p class="text-[11px] text-slate-400 font-mono text-center">
               Tercatat resmi di Portal Mahasiswa UMN (Prodi SI - Angkatan 2024).
             </p>
           </div>
         </div>
 
-        <!-- High School Card -->
-        <div class="p-6 rounded-2xl bg-surface-850/80 border border-surface-800 space-y-4">
+        <!-- High School Card (SMA Tarakanita) -->
+        <div class="bento-card rounded-3xl p-6 sm:p-7 space-y-4">
           <div class="flex items-start justify-between">
             <div>
-              <span class="text-xs font-mono text-slate-400 font-semibold">2021 – 2024</span>
-              <h4 class="text-lg font-bold text-white mt-1">IPS (Ilmu Pengetahuan Sosial)</h4>
-              <p class="text-sm text-slate-300">SMA Tarakanita Gading Serpong</p>
+              <span class="text-xs font-mono text-slate-400 font-bold">2021 – 2024</span>
+              <h4 class="text-lg sm:text-xl font-bold text-white mt-1">IPS (Ilmu Pengetahuan Sosial)</h4>
+              <p class="text-xs sm:text-sm text-slate-300">SMA Tarakanita Gading Serpong</p>
             </div>
+            <span class="px-3 py-1 rounded-full bg-surface-800 border border-white/10 text-slate-300 text-xs font-mono font-bold shrink-0">
+              Lulusan 2024
+            </span>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed">
+
+          <p class="text-xs text-slate-300 leading-relaxed">
             Mempelajari dasar-dasar ilmu sosial, ekonomi bisnis, akuntansi dasar, serta pemikiran analitis yang menjadi bekal kuat dalam memahami alur proses bisnis enterprise dan sistem informasi.
           </p>
 
-          <div class="pt-4 border-t border-surface-800 space-y-2">
+          <div class="pt-4 border-t border-white/10 space-y-2">
             <span class="text-xs font-mono text-slate-400">Fondasi Kompetensi:</span>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="skill-tag text-xs font-semibold">Ekonomi & Akuntansi Dasar</span>
-              <span class="skill-tag text-xs font-semibold">Logika Analisis Bisnis</span>
-              <span class="skill-tag text-xs font-semibold">Komunikasi Sosial</span>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag">Ekonomi & Akuntansi Dasar</span>
+              <span class="skill-tag">Logika Analisis Bisnis</span>
+              <span class="skill-tag">Komunikasi Sosial</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="kontak" class="space-y-8 pt-6">
-      <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-surface-850 via-surface-850 to-surface-900 border border-surface-800 text-center space-y-6 relative overflow-hidden">
-        <div class="w-14 h-14 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 mx-auto flex items-center justify-center text-brand-gold">
-          <i data-lucide="send" class="w-7 h-7"></i>
+    <!-- 6. CONTACT BENTO HUB -->
+    <section id="kontak" class="space-y-6">
+      <div class="space-y-2">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-1 bg-brand-gold rounded-full"></div>
+          <h2 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-gold font-mono">Hubungi Saya</h2>
         </div>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Mari Terhubung & Berkolaborasi</h3>
+        <p class="text-xs sm:text-sm text-slate-400">Terbuka untuk diskusi kesempatan magang, proyek analitik data, dan implementasi ERP.</p>
+      </div>
 
-        <div class="space-y-2 max-w-xl mx-auto">
-          <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Mari Terhubung & Berkolaborasi</h3>
-          <p class="text-sm text-slate-400">
-            Terbuka untuk peluang magang, proyek riset sistem informasi, maupun diskusi seputar implementasi sistem enterprise & analitik data.
-          </p>
-        </div>
-
-        <!-- Contact Methods Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto pt-4">
-          <!-- Email Card -->
-          <div class="p-4 rounded-xl bg-surface-800/60 border border-surface-700/60 hover:border-brand-gold/50 transition-all text-left space-y-2">
-            <div class="flex items-center justify-between">
-              <span class="text-[11px] font-mono text-slate-400 uppercase">Email Mahasiswa</span>
-              <i data-lucide="mail" class="w-4 h-4 text-brand-gold"></i>
-            </div>
-            <div class="text-xs text-slate-200 font-mono break-all font-semibold">kelvin.alexander@student.umn.ac.id</div>
-            <button id="copyEmailCardBtn" class="w-full mt-2 py-1.5 rounded-lg bg-surface-700/60 hover:bg-surface-700 text-[11px] font-semibold text-brand-light flex items-center justify-center gap-1.5 transition-all">
-              <i data-lucide="copy" class="w-3 h-3"></i>
-              <span id="copyEmailCardText">Salin Alamat Email</span>
-            </button>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- Email Bento -->
+        <div class="bento-card rounded-3xl p-5 flex flex-col justify-between space-y-3 group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-mono text-slate-400 uppercase">Email Mahasiswa</span>
+            <i data-lucide="mail" class="w-4 h-4 text-brand-gold"></i>
           </div>
-
-          <!-- WhatsApp Card -->
-          <a href="https://wa.me/6285281649108" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-surface-800/60 border border-surface-700/60 hover:border-emerald-500/50 transition-all text-left space-y-2 group">
-            <div class="flex items-center justify-between">
-              <span class="text-[11px] font-mono text-slate-400 uppercase">WhatsApp</span>
-              <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i>
-            </div>
-            <div class="text-xs text-slate-200 font-mono font-semibold">+62 852-8164-9108</div>
-            <div class="w-full mt-2 py-1.5 rounded-lg bg-emerald-500/10 group-hover:bg-emerald-500/20 text-[11px] font-semibold text-emerald-300 flex items-center justify-center gap-1.5 transition-all">
-              <i data-lucide="external-link" class="w-3 h-3"></i>
-              <span>Buka Obrolan WA</span>
-            </div>
-          </a>
-
-          <!-- LinkedIn Card -->
-          <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-surface-800/60 border border-surface-700/60 hover:border-blue-500/50 transition-all text-left space-y-2 group">
-            <div class="flex items-center justify-between">
-              <span class="text-[11px] font-mono text-slate-400 uppercase">LinkedIn Profile</span>
-              <i data-lucide="linkedin" class="w-4 h-4 text-blue-400"></i>
-            </div>
-            <div class="text-xs text-slate-200 font-mono font-semibold">Kelvin Alexander</div>
-            <div class="w-full mt-2 py-1.5 rounded-lg bg-blue-500/10 group-hover:bg-blue-500/20 text-[11px] font-semibold text-blue-300 flex items-center justify-center gap-1.5 transition-all">
-              <i data-lucide="external-link" class="w-3 h-3"></i>
-              <span>Kunjungi Profil</span>
-            </div>
-          </a>
+          <div class="text-xs text-slate-200 font-mono font-medium truncate" title="kelvin.alexander@student.umn.ac.id">
+            kelvin.alexander@student.umn.ac.id
+          </div>
+          <button id="copyEmailCardBtn" class="w-full mt-2 py-2 rounded-xl bg-surface-800 hover:bg-surface-750 border border-white/10 text-[11px] font-semibold text-brand-light flex items-center justify-center gap-1.5 transition-all">
+            <i data-lucide="copy" class="w-3.5 h-3.5 text-brand-gold"></i>
+            <span id="copyEmailCardText">Salin Alamat Email</span>
+          </button>
         </div>
+
+        <!-- WhatsApp Bento -->
+        <a href="https://wa.me/6285281649108" target="_blank" rel="noopener noreferrer" class="bento-card rounded-3xl p-5 flex flex-col justify-between space-y-3 group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-mono text-slate-400 uppercase">WhatsApp</span>
+            <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i>
+          </div>
+          <div class="text-xs text-slate-200 font-mono font-medium">
+            +62 852-8164-9108
+          </div>
+          <div class="w-full mt-2 py-2 rounded-xl bg-emerald-500/10 group-hover:bg-emerald-500/20 text-[11px] font-semibold text-emerald-300 flex items-center justify-center gap-1.5 transition-all">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            <span>Buka Obrolan WA</span>
+          </div>
+        </a>
+
+        <!-- LinkedIn Bento -->
+        <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" class="bento-card rounded-3xl p-5 flex flex-col justify-between space-y-3 group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-mono text-slate-400 uppercase">LinkedIn Profile</span>
+            <i data-lucide="linkedin" class="w-4 h-4 text-blue-400"></i>
+          </div>
+          <div class="text-xs text-slate-200 font-mono font-medium">
+            Kelvin Alexander
+          </div>
+          <div class="w-full mt-2 py-2 rounded-xl bg-blue-500/10 group-hover:bg-blue-500/20 text-[11px] font-semibold text-blue-300 flex items-center justify-center gap-1.5 transition-all">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            <span>Kunjungi Profil</span>
+          </div>
+        </a>
+
+        <!-- GitHub Bento -->
+        <a href="https://github.com/YUVINS" target="_blank" rel="noopener noreferrer" class="bento-card rounded-3xl p-5 flex flex-col justify-between space-y-3 group">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-mono text-slate-400 uppercase">GitHub Repo</span>
+            <i data-lucide="github" class="w-4 h-4 text-purple-400"></i>
+          </div>
+          <div class="text-xs text-slate-200 font-mono font-medium">
+            github.com/YUVINS
+          </div>
+          <div class="w-full mt-2 py-2 rounded-xl bg-purple-500/10 group-hover:bg-purple-500/20 text-[11px] font-semibold text-purple-300 flex items-center justify-center gap-1.5 transition-all">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            <span>Buka Portofolio Repo</span>
+          </div>
+        </a>
       </div>
     </section>
   </main>
 
   <!-- FOOTER -->
-  <footer class="border-t border-surface-800 bg-surface-950 py-8 text-center text-xs text-slate-500 space-y-2">
+  <footer class="border-t border-white/10 bg-surface-950 py-8 text-center text-xs text-slate-400 space-y-2">
     <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div>© 2026 <strong class="text-slate-300">Kelvin Alexander</strong>. Dibangun dengan HTML5, Tailwind CSS, & Vanilla JS.</div>
+      <div>© 2026 <strong class="text-white">Kelvin Alexander</strong> • Modern Bento Tech Portfolio.</div>
       <div class="flex items-center gap-4 text-slate-400">
         <a href="#hero" class="hover:text-brand-gold transition-colors flex items-center gap-1">
           <span>Kembali ke Atas</span>
@@ -468,91 +607,87 @@
   </footer>
 
   <!-- DETAIL PROJECT MODAL (MULTI-VISUAL SHOWCASE) -->
-  <div id="projectModal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
-    <div class="relative w-full max-w-3xl max-h-[92vh] bg-surface-850 border border-surface-700 rounded-3xl shadow-2xl flex flex-col overflow-hidden transform scale-95 transition-transform duration-300" id="modalCard">
+  <div id="projectModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
+    <div id="modalCard" class="bg-surface-850 border border-white/15 rounded-3xl max-w-4xl w-full max-h-[92vh] flex flex-col overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300">
+      
       <!-- Modal Header -->
-      <div class="p-5 sm:p-6 border-b border-surface-700/80 flex items-start justify-between gap-4 bg-surface-900/60">
-        <div class="space-y-1.5">
+      <div class="p-5 sm:p-6 border-b border-white/10 flex items-start justify-between gap-4 bg-surface-900/60">
+        <div class="space-y-1">
           <div class="flex items-center gap-2">
-            <span id="modalCategory" class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-brand-gold/10 text-brand-gold border border-brand-gold/30">Category</span>
-            <span id="modalYear" class="text-xs text-slate-400 font-mono">2024</span>
+            <span id="modalCategory" class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-brand-gold/10 text-brand-gold border border-brand-gold/30 font-mono"></span>
+            <span id="modalYear" class="text-xs text-slate-400 font-mono"></span>
           </div>
-          <h3 id="modalTitle" class="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">Project Title</h3>
-          <p id="modalSubtitle" class="text-xs sm:text-sm text-slate-300 font-mono">Project Subtitle</p>
+          <h3 id="modalTitle" class="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-snug"></h3>
+          <p id="modalSubtitle" class="text-xs sm:text-sm text-brand-light font-mono"></p>
         </div>
-        <button id="closeModalBtn" class="w-9 h-9 rounded-xl bg-surface-800 hover:bg-surface-700 border border-surface-700 text-slate-400 hover:text-white flex items-center justify-center transition-all shrink-0">
+        <button id="closeModalBtn" class="p-2 rounded-xl bg-surface-800 hover:bg-surface-750 text-slate-300 hover:text-white transition-all shrink-0">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
       <!-- Modal Body (Scrollable) -->
-      <div class="p-5 sm:p-6 overflow-y-auto space-y-6 text-sm text-slate-300">
+      <div class="p-5 sm:p-6 overflow-y-auto space-y-6 flex-1">
         
-        <!-- Multi-Visual Gallery Showcase -->
-        <div class="rounded-2xl overflow-hidden border border-surface-700 bg-surface-900/95 shadow-xl space-y-3 p-3 sm:p-4">
-          <div class="flex items-center justify-between text-xs font-mono pb-2 border-b border-surface-800">
-            <span class="flex items-center gap-1.5 text-brand-light font-bold">
-              <i data-lucide="camera" class="w-4 h-4 text-brand-gold"></i>
-              <span>Galeri Bukti Visual & Tangkapan Layar (High-Resolution)</span>
+        <!-- Multi-Visual Interactive Gallery -->
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono uppercase tracking-wider text-brand-gold font-bold flex items-center gap-1.5">
+              <i data-lucide="image" class="w-3.5 h-3.5"></i>
+              <span>Bukti Visual & Hasil Nyata</span>
             </span>
-            <button onclick="openLightbox()" class="text-[11px] text-brand-gold hover:text-brand-light flex items-center gap-1 underline underline-offset-2 transition-colors">
-              <i data-lucide="maximize" class="w-3 h-3"></i>
-              <span>Zoom Layar Penuh</span>
-            </button>
+            <span class="text-[11px] text-slate-400 font-mono">Klik gambar untuk melihat resolusi penuh</span>
           </div>
 
-          <!-- Featured Visual Screen with Zoom Hint -->
-          <div class="relative bg-black/80 rounded-xl overflow-hidden border border-surface-800 flex items-center justify-center min-h-[250px] max-h-[460px] group cursor-zoom-in" onclick="openLightbox()">
-            <img id="modalImage" src="" alt="Screenshot Proyek" class="w-full h-auto max-h-[440px] object-contain group-hover:scale-[1.02] transition-transform duration-300">
-            <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/80 text-[11px] text-brand-gold border border-brand-gold/40 backdrop-blur-sm flex items-center gap-1.5 shadow opacity-80 group-hover:opacity-100 transition-opacity">
-              <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i>
-              <span>Klik untuk Perbesar</span>
+          <!-- Main Active Visual Banner (Clickable to Lightbox) -->
+          <div class="rounded-2xl overflow-hidden border border-white/15 bg-black/60 relative group cursor-zoom-in" onclick="openLightbox()">
+            <img id="modalImage" src="" alt="Project Visual" class="w-full h-64 sm:h-84 md:h-96 object-contain bg-surface-950 group-hover:scale-[1.01] transition-transform duration-300">
+            <div class="absolute bottom-3 right-3 px-3 py-1.5 rounded-xl bg-black/85 text-xs text-brand-light border border-brand-gold/40 flex items-center gap-1.5 backdrop-blur-sm shadow-xl">
+              <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-brand-gold"></i>
+              <span>Perbesar (Zoom)</span>
             </div>
           </div>
 
           <!-- Active Visual Caption Box -->
-          <div class="p-3.5 rounded-xl bg-surface-850 border border-surface-800 space-y-1">
-            <h5 id="modalImageTitle" class="text-xs font-bold text-brand-gold font-mono flex items-center gap-1.5">
-              <span>Judul Visual</span>
-            </h5>
-            <p id="modalImageCaption" class="text-xs text-slate-300 leading-relaxed">
-              Keterangan visual yang mudah dimengerti.
-            </p>
+          <div class="p-3.5 rounded-xl bg-surface-900 border border-white/10 space-y-1">
+            <div id="modalImageTitle" class="text-xs font-bold text-white font-mono"></div>
+            <div id="modalImageCaption" class="text-xs text-slate-300 leading-relaxed"></div>
           </div>
 
-          <!-- Visual Thumbnails Selector (Min 3 Images) -->
+          <!-- Visual Thumbnail Tabs -->
           <div class="space-y-1.5 pt-1">
-            <div class="text-[11px] font-mono text-slate-400">Pilih Tampilan Visual (Minimal 3):</div>
-            <div id="modalThumbnails" class="grid grid-cols-1 sm:grid-cols-3 gap-2"></div>
+            <span class="text-[11px] font-mono text-slate-400">Pilih Tampilan Visual:</span>
+            <div id="modalThumbnails" class="grid grid-cols-3 gap-2 sm:gap-3">
+              <!-- Injected by app.js -->
+            </div>
           </div>
         </div>
 
-        <!-- Tech Stack Tags -->
-        <div>
-          <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-brand-gold mb-2">Software & Konsep Utama</h4>
+        <!-- Tags List -->
+        <div class="space-y-2 pt-2">
+          <span class="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">Software & Konsep Utama:</span>
           <div id="modalTags" class="flex flex-wrap gap-1.5"></div>
         </div>
 
-        <!-- Problem / Background -->
-        <div class="p-4 rounded-xl bg-surface-900/80 border border-surface-800 space-y-1.5">
-          <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
-            <i data-lucide="help-circle" class="w-4 h-4 text-brand-gold"></i>
+        <!-- Problem Statement -->
+        <div class="p-4 rounded-2xl bg-surface-900/90 border border-white/10 space-y-1.5">
+          <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400 flex items-center gap-2">
+            <i data-lucide="alert-circle" class="w-4 h-4 text-amber-400"></i>
             <span>Tantangan & Masalah yang Diselesaikan</span>
           </h4>
           <p id="modalProblem" class="text-xs sm:text-sm text-slate-300 leading-relaxed"></p>
         </div>
 
-        <!-- Key Solution / Steps -->
-        <div class="space-y-2">
-          <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
-            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+        <!-- Implementation Steps -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-blue-400 flex items-center gap-2">
+            <i data-lucide="list-checks" class="w-4 h-4 text-blue-400"></i>
             <span>Langkah Pengerjaan & Alur Solusi</span>
           </h4>
-          <ul id="modalSteps" class="space-y-2 text-xs sm:text-sm text-slate-300"></ul>
+          <ul id="modalSteps" class="space-y-2.5 text-xs sm:text-sm text-slate-300"></ul>
         </div>
 
         <!-- Key Impact / Outcomes -->
-        <div class="p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/30 space-y-1.5">
+        <div class="p-4 rounded-2xl bg-emerald-950/20 border border-emerald-500/30 space-y-1.5">
           <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
             <i data-lucide="sparkles" class="w-4 h-4 text-emerald-400"></i>
             <span>Manfaat Nyata & Kesimpulan Proyek</span>
@@ -562,9 +697,9 @@
       </div>
 
       <!-- Modal Footer -->
-      <div class="p-4 border-t border-surface-700/80 bg-surface-900/60 flex items-center justify-between">
+      <div class="p-4 border-t border-white/10 bg-surface-900/60 flex items-center justify-between">
         <span class="text-xs text-slate-400 font-mono">Kelvin Alexander • Sistem Informasi UMN</span>
-        <button id="closeModalFooterBtn" class="px-4 py-2 rounded-xl bg-surface-800 hover:bg-surface-700 text-xs font-semibold text-slate-200 border border-surface-700 transition-all">
+        <button id="closeModalFooterBtn" class="px-4 py-2 rounded-xl bg-surface-800 hover:bg-surface-750 text-xs font-semibold text-slate-200 border border-white/10 transition-all">
           Tutup Jendela
         </button>
       </div>
@@ -575,19 +710,19 @@
   <div id="imageLightbox" class="fixed inset-0 z-60 bg-black/95 backdrop-blur-md flex flex-col items-center justify-center p-3 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
     <div class="w-full max-w-6xl flex items-center justify-between pb-3 text-xs font-mono text-slate-400">
       <span id="lightboxTitle" class="text-brand-gold font-bold truncate">Tampilan Penuh Resolusi Tinggi</span>
-      <button id="closeLightboxBtn" class="px-3 py-1.5 rounded-lg bg-surface-800 hover:bg-surface-700 border border-surface-700 text-slate-200 flex items-center gap-1.5 transition-all">
+      <button id="closeLightboxBtn" class="px-3 py-1.5 rounded-xl bg-surface-800 hover:bg-surface-750 border border-white/10 text-slate-200 flex items-center gap-1.5 transition-all">
         <i data-lucide="x" class="w-4 h-4"></i>
         <span>Tutup (ESC)</span>
       </button>
     </div>
-    <div class="w-full max-w-6xl max-h-[82vh] overflow-auto rounded-2xl border border-surface-700 bg-surface-900 shadow-2xl flex items-center justify-center p-2 sm:p-4">
-      <img id="lightboxImg" src="" alt="Zoom Screenshot" class="w-full h-auto max-h-[78vh] object-contain rounded-lg">
+    <div class="w-full max-w-6xl max-h-[82vh] overflow-auto rounded-3xl border border-white/15 bg-surface-900 shadow-2xl flex items-center justify-center p-2 sm:p-4">
+      <img id="lightboxImg" src="" alt="Zoom Screenshot" class="w-full h-auto max-h-[78vh] object-contain rounded-2xl">
     </div>
     <p id="lightboxCaption" class="mt-3 text-xs sm:text-sm text-slate-300 font-mono text-center max-w-3xl px-4"></p>
   </div>
 
   <!-- Toast Notification -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-xl bg-surface-800 border border-brand-gold/40 text-brand-light text-xs font-medium shadow-2xl flex items-center gap-2 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+  <div id="toast" class="fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-2xl bg-surface-800 border border-brand-gold/40 text-brand-light text-xs font-medium shadow-2xl flex items-center gap-2 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
     <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
     <span id="toastMsg">Teks berhasil disalin!</span>
   </div>
